@@ -1,0 +1,729 @@
+body {
+  font-family: system-ui;
+  margin: 0 100px;
+  box-sizing: border-box;
+  place-items: center;
+  background-image: url('./images/projectDetails2BG.jpg');
+  background-repeat: no-repeat;
+  background-size: 120em, 100%;
+  background-color: #08091B;
+  color: white;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #08091B;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3339a7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1d205e;
+}
+
+/* START HEADER CSS SCRIPT */
+
+.main-header {
+  font-family: 'Ubuntu', 'Helvetica', sans-serif;
+  font-size: 1.2em;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  height: 90px;
+}
+
+.header-logo {
+  content: url(./images/favicon.png);
+  width: auto;
+  height: 180px;
+}
+
+.header-logo:hover {
+  cursor: pointer;
+}
+
+.header-content {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+}
+
+.header-content a {
+  font-size: 0.9em;
+  color: white;
+  letter-spacing: 3px;
+  padding: 30px;
+  text-decoration: none;
+}
+
+.header-content a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  background: yellow;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.header-content a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.buy-btn a {
+  position: relative;
+  color: rgb(255, 254, 255);
+  padding: 10px;
+  text-decoration: none;
+
+}
+
+.buy-btn a:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.buy-btn a:active:after {
+
+  background: transparent;
+}
+
+.buy-btn a:hover:before {
+
+  opacity: 1;
+}
+
+.buy-btn a:after {
+
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #565483;
+  left: 0;
+  top: 0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+
+/* END OF HEADER CSS */
+/* START OF SECTION HERO CSS SCRIPT */
+
+.hero-card {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  /* padding-top: 60px; */
+  align-items: center;
+  animation: heroan 2s ease-in-out;
+}
+
+@keyframes heroan {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 456px;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  /* height: 456px; */
+}
+
+.hero-btns {
+  margin-top: 50px;
+}
+
+.hero-btns a:nth-child(1) {
+  font-family: 'Ubuntu', Hevetica, sans-serif;
+  background-color: rgb(2, 255, 2);
+  padding: 20px;
+  margin-right: 50px;
+  color: black;
+  text-decoration: none;
+  border: 1px rgba(204, 204, 204, 0.555) solid;
+}
+
+.hero-btns a:nth-child(1):hover {
+  transition: all 0.3s ease 0s;
+  background-color: rgba(2, 255, 2, 0);
+  color: white;
+}
+
+.hero-btns a:nth-child(2) {
+  font-family: 'Ubuntu', Hevetica, sans-serif;
+  background-color: rgba(2, 255, 2, 0);
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  border: 1px rgba(204, 204, 204, 0.555) solid;
+}
+
+.hero-btns a:nth-child(2):hover {
+  transition: all 0.3s ease 0s;
+  background-color: rgb(2, 255, 2);
+  color: black;
+}
+
+.main-hero-text {
+  font-size: 2.4em;
+  letter-spacing: 3px;
+  font-family: 'Russo One', Hevetica, sans-serif;
+}
+
+.secondary-hero-text {
+  margin-top: -60px;
+  font-size: 1.5em;
+  font-family: 'Carme', Hevetica, sans-serif;
+}
+
+.hero-img {
+  max-width: 81%;
+  height: auto;
+  content: url('./images/Investment data-rafiki.png');
+  -webkit-animation: action 1s infinite alternate;
+  animation: action 1s infinite alternate;
+}
+
+@-webkit-keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-list {
+  display: flex;
+  flex-direction: row;
+}
+
+ul.hero-list li {
+  padding: 0 24px;
+}
+
+ul.hero-list {
+  list-style-type: none;
+  font-family: 'Russo One', Hevetica, sans-serif;
+}
+
+ul.hero-list h5 {
+  font-size: 1em;
+}
+
+ul.hero-list h6 {
+  font-size: 1em;
+  color: rgb(204, 0, 255);
+}
+
+/* END OF SECTION HERO CSS SCRIPT */
+/* START OF LEFT SECTION PROJECT-POOLS CSS SCRIPT */
+
+.project-pools {
+  padding-top: 110px;
+}
+
+.pool-inner-sec {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.subtitle {
+  font-family: 'Russo One', Hevetica, sans-serif;
+  color: rgb(2, 255, 2);
+  margin-right: 10px;
+}
+
+.sub-left-image-steps {
+  content: url(./images/steps.png)
+}
+
+.pool-inner-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.pool-inner-header h2 {
+  font-family: 'Russo One', Hevetica, sans-serif;
+  font-size: 2em;
+  letter-spacing: 3px;
+}
+
+.pool-btn-area a {
+  font-family: 'Ubuntu', Hevetica, sans-serif;
+  background-color: rgba(2, 255, 2, 0);
+  padding: 15px 30px;
+  color: white;
+  text-decoration: none;
+  border: 1px rgba(204, 204, 204, 0.555) solid;
+}
+
+.pool-btn-area a:nth-child(1) {
+  margin-right: 20px;
+  background-color: rgb(2, 255, 2);
+  color: black;
+}
+
+.pool-btn-area a:nth-child(1):hover {
+  color: white;
+  background-color: rgba(2, 255, 2, 0);
+  transition: 0.3s;
+}
+
+.pool-btn-area a:nth-child(2):hover {
+  color: black;
+  background-color: rgb(2, 255, 2);
+  transition: 0.3s;
+}
+
+.menu-list {
+  display: flex;
+  color: rgba(255, 255, 255, 0.603);
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 0 30px;
+  margin-bottom: 30px;
+}
+
+.list-1 {
+  width: 15%;
+}
+
+#pool-card-btn {
+  color: #FFFFFF;
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+#pool-coin-card {
+  font-family: 'Russo One';
+  letter-spacing: 1px;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  background-color: #1A1B30;
+  width: 95%;
+  padding: 10px 30px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+#pool-coin-card span {
+  margin-left: -50px;
+  max-width: 172px;
+}
+
+#pool-coin-card:hover {
+  background: radial-gradient(circle, #7d08eb -74%, #1E1F35 30%);
+  border-left: 5px rgb(2, 255, 2) solid;
+  transition: 0.2s;
+}
+
+.card-chain {
+  content: url('./images/project-single-image2.png')
+}
+
+.card-coin-img {
+  content: url('./images/uniswap.png')
+}
+
+/* END OF SECTION PROJECT-POOLS CSS SCRIPT */
+/* START OF LEFT SECTION PARTICIPATE CSS SCRIPT */
+
+.participate-info {
+  background-image:
+    url('./images/earthBg.svg'),
+    url('./images/uFO.png');
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 270px;
+  background-position: 50% 20%, 10% 100%;
+}
+
+.participate-container {
+  display: flex;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  animation: leftsec 1s ease-in;
+}
+
+.participate-left-sec {
+  width: 45%;
+
+}
+
+@keyframes leftsec {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+.participate-left-sec h1 {
+  font-family: 'Russo One', Hevetica, sans-serif;
+  font-size: 2em;
+  letter-spacing: 3px;
+}
+
+.participate-left-sec p {
+  font-size: 1em;
+  font-family: Hevetica, sans-serif;
+  color: rgba(255, 255, 255, 0.582);
+}
+
+.verify-btn-container {
+  margin-top: 60px;
+}
+
+.btn-text {
+  font-family: 'Ubuntu', Hevetica, sans-serif;
+  background-color: rgba(2, 255, 2, 0);
+  padding: 15px 30px;
+  color: white;
+  text-decoration: none;
+  border: 1px rgba(204, 204, 204, 0.555) solid;
+}
+
+/* END OF LEFT SECTION PARTICIPATE CSS SCRIPT */
+/* START OF RIGHT SECTION PARTICIPATE CSS SCRIPT */
+
+.participate-right-sec {
+  display: flex;
+  width: 55%;
+  margin-left: 102px;
+  flex-direction: column;
+}
+
+.participate-right-card {
+  display: flex;
+  margin: 10px 0;
+  padding: 20px 40px;
+  background-color: #17192dbd;
+}
+
+.participate-card-number-one {
+  content: url('./images/One.svg')
+}
+
+.participate-card-number-two {
+  content: url('./images/two.svg')
+}
+
+.participate-card-number-three {
+  content: url('./images/three.svg')
+}
+
+.participate-card-text {
+  margin-left: 50px;
+}
+
+.participate-card-text h4 {
+  font-size: 1.3em;
+  letter-spacing: 1.5px;
+  font-family: 'Russo One', Hevetica, sans-serif;
+}
+
+.participate-card-text p {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.582);
+  font-family: Hevetica, sans-serif;
+  letter-spacing: 0.8px;
+}
+
+/* END OF RIGHT SECTION PARTICIPATE CSS SCRIPT */
+/* START OF SECTION KEY POINTS CSS SCRIPT */
+
+.key-points {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.key-points-header h1 {
+  font-family: 'Russo One', Hevetica, sans-serif;
+  font-size: 2em;
+  letter-spacing: 3px;
+}
+
+.key-points-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-img-1 {
+  content: url('./images/Key_icon1.png')
+}
+
+.card-img-2 {
+  content: url('./images/Key_icon2.png')
+}
+
+.card-img-3 {
+  content: url('./images/Key_icon3.png')
+}
+
+.card-img-4 {
+  min-height: 50px;
+  content: url('./images/Key_icon4.png')
+}
+
+
+.key-point-text p {
+  max-width: 230px;
+  width: 100%;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.582);
+  font-family: Hevetica, sans-serif;
+  letter-spacing: 0.8px;
+}
+
+.key-point-text h3 {
+  font-family: 'Ubuntu', Hevetica, sans-serif;
+}
+
+/* END OF SECTION KEY POINTS CSS SCRIPT */
+/* START OF SECTION PARTNERS CSS SCRIPT */
+
+.partners-sec {
+  background-image:
+    url('./images/earthBg.svg'),
+    url('./images/rocket.png');
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 240px;
+  background-position: 80% 30%, 0% 70%;
+  padding-top: 110px;
+}
+
+.partners-header {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.partners-inner-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.partners-inner-header h2 {
+  font-family: 'Russo One', Hevetica, sans-serif;
+  font-size: 2em;
+  letter-spacing: 3px;
+}
+
+.partners-btn-area a {
+  font-family: 'Ubuntu', Hevetica, sans-serif;
+  background-color: rgba(2, 255, 2, 0);
+  padding: 15px 30px;
+  color: white;
+  text-decoration: none;
+  border: 1px rgba(204, 204, 204, 0.555) solid;
+}
+
+.partners-btn-area a:nth-child(1) {
+  margin-right: 20px;
+  background-color: rgb(2, 255, 2);
+  color: black;
+}
+
+.partners-btn-area a:nth-child(1):hover {
+  color: white;
+  background-color: rgba(2, 255, 2, 0);
+  transition: 0.3s;
+}
+
+.partners-btn-area a:nth-child(2):hover {
+  color: black;
+  background-color: rgb(2, 255, 2);
+  transition: 0.3s;
+}
+
+.partners-content {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px;
+}
+
+.partner-1 {
+  content: url('./images/1.png')
+}
+
+.partner-2 {
+  content: url('./images/2.png')
+}
+
+.partner-3 {
+  content: url('./images/3.png')
+}
+
+.partner-4 {
+  content: url('./images/4.png')
+}
+
+.partner-5 {
+  content: url('./images/5.png')
+}
+
+.partner-6 {
+  content: url('./images/6.png')
+}
+
+.partner-7 {
+  content: url('./images/7.png')
+}
+
+.partner-8 {
+  content: url('./images/8.png')
+}
+
+.partner-9 {
+  content: url('./images/9.png')
+}
+
+.partner-10 {
+  content: url('./images/10.png')
+}
+
+.partner-11 {
+  content: url('./images/11.png')
+}
+
+.partner-12 {
+  content: url('./images/12.png')
+}
+
+/* END OF SECTION PARTNERS CSS SCRIPT */
+/* START OF SECTION FAQ CSS SCRIPT*/
+
+.faq-header {
+  display: flex;
+  justify-content: center;
+  padding-top: 110px;
+}
+
+.faq-header h2 {
+  font-family: 'Russo One', Hevetica, sans-serif;
+  font-size: 2em;
+  letter-spacing: 3px;
+}
+
+.faq-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.subtitle-faq {
+  font-family: 'Russo One', Hevetica, sans-serif;
+  color: rgb(2, 255, 2);
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.sub-left-image-steps2 {
+  content: url('./images/steps2.png')
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+/* END OF SECTION FAQ CSS SCRIPT*/
+/* START OF THE FOOTER CSS SCRIPT */
+
+.ft {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #1A1B30;
+}
